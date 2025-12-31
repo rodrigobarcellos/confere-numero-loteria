@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conferir Loteria</title>
+    <meta name="description" content="Compare apostas de loteria com o resultado e veja quantos acertos cada aposta teve." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div>
+          <h1>Conferir Loteria</h1>
+          <p class="subtitle">
+            Cole o conteúdo dos arquivos ou envie os arquivos. Tudo roda no seu navegador (sem servidor).
+          </p>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="card-title">
+            <h2>Apostas</h2>
+            <p>1 aposta por linha. Separadores: espaço, vírgula ou “;”. Comentários começam com “#”.</p>
+          </div>
+
+          <div class="row">
+            <label class="file">
+              <input id="apostasFile" type="file" accept=".txt,text/plain" />
+              <span>Selecionar arquivo…</span>
+            </label>
+            <button id="apostasSample" class="btn btn-ghost" type="button">Colar exemplo</button>
+            <button id="apostasClear" class="btn btn-ghost" type="button">Limpar</button>
+          </div>
+
+          <textarea
+            id="apostasText"
+            class="textarea"
+            rows="10"
+            spellcheck="false"
+            placeholder="Ex.:&#10;05 12 23 34 45 56&#10;01, 02, 03, 04, 05, 06"
+          ></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <h2>Resultado</h2>
+            <p>1 linha válida com os números do sorteio. Separadores: espaço, vírgula ou “;”.</p>
+          </div>
+
+          <div class="row">
+            <label class="file">
+              <input id="resultadoFile" type="file" accept=".txt,text/plain" />
+              <span>Selecionar arquivo…</span>
+            </label>
+            <button id="resultadoSample" class="btn btn-ghost" type="button">Colar exemplo</button>
+            <button id="resultadoClear" class="btn btn-ghost" type="button">Limpar</button>
+          </div>
+
+          <textarea
+            id="resultadoText"
+            class="textarea"
+            rows="5"
+            spellcheck="false"
+            placeholder="Ex.:&#10;05 12 23 34 45 56"
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="compareBtn" class="btn btn-primary" type="button">Comparar</button>
+        <button id="resetBtn" class="btn" type="button">Resetar tudo</button>
+      </section>
+
+      <section id="alerts" class="alerts" aria-live="polite"></section>
+
+      <section class="card">
+        <div class="card-title">
+          <h2>Resultado</h2>
+          <p id="resultadoHeader" class="muted">Ainda não comparado.</p>
+        </div>
+        <div id="output" class="output"></div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Dica: você pode hospedar esta página de graça no GitHub Pages (veja o README do repositório).
+        </p>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
+
