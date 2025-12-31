@@ -1,0 +1,4 @@
+# Resultado oficial (uma linha válida)
+05 12 23 34 45 56
+
+
